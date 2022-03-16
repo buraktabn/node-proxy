@@ -1,0 +1,14 @@
+[Unit]
+Description=rpc-node-proxy
+Documentation=https://github.com/buraktabn/rpc-health-proxy
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/root/.nvm/versions/node/v16.14.1/bin/node /root/rpc-health-proxy/index.js
+WorkingDirectory=/root/rpc-health-proxy
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
